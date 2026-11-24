@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  spectergraph:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spectergraph
+    volumes:
+      - ./reports:/app/reports
+    command: ["-d", "example.com", "--out-html", "/app/reports/graph.html", "--out-md", "/app/reports/report.md"]

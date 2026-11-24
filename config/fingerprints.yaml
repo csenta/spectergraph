@@ -1,0 +1,59 @@
+# Subdomain Takeover Fingerprint Signatures Database
+version: "1.0"
+
+providers:
+  - name: "Amazon S3"
+    cname_patterns:
+      - "s3\\.amazonaws\\.com"
+      - "s3-website-[a-z0-9-]+\\.amazonaws\\.com"
+    response_patterns:
+      - "The specified bucket does not exist"
+      - "NoSuchBucket"
+    severity: "High"
+
+  - name: "GitHub Pages"
+    cname_patterns:
+      - "\\.github\\.io"
+    response_patterns:
+      - "There isn't a GitHub Pages site here"
+      - "For root URLs \\(like http://example\\.com/\\) you must provide an index\\.html"
+    severity: "High"
+
+  - name: "Heroku"
+    cname_patterns:
+      - "herokudns\\.com"
+      - "herokuapp\\.com"
+    response_patterns:
+      - "No such app"
+      - "herokucdn\\.com/error-pages/no-such-app\\.html"
+    severity: "High"
+
+  - name: "Microsoft Azure"
+    cname_patterns:
+      - "azurewebsites\\.net"
+      - "cloudapp\\.net"
+    response_patterns:
+      - "404 Web Site not found"
+      - "The specified resource does not exist"
+    severity: "High"
+
+  - name: "Shopify"
+    cname_patterns:
+      - "myshopify\\.com"
+    response_patterns:
+      - "Sorry, this shop is currently unavailable"
+    severity: "Medium"
+
+  - name: "Zendesk"
+    cname_patterns:
+      - "zendesk\\.com"
+    response_patterns:
+      - "Help Center Closed"
+    severity: "Medium"
+
+  - name: "Fastly"
+    cname_patterns:
+      - "fastly\\.net"
+    response_patterns:
+      - "Fastly error: unknown domain"
+    severity: "Medium"
