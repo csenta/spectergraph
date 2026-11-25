@@ -1,5 +1,7 @@
 # SpecterGraph
 
+> **Status:** prototype. A personal security-research project, not a production product. Expect rough edges; issues and pull requests are welcome.
+
 **Autonomous Attack Surface Management & Threat Exposure Knowledge Graph Platform.**
 
 [![CI](https://github.com/csenta/spectergraph/actions/workflows/ci.yml/badge.svg)](https://github.com/csenta/spectergraph/actions)
@@ -80,3 +82,7 @@ For detailed architectural specifications, see [ARCHITECTURE.md](ARCHITECTURE.md
 - [API.md](API.md) — JSON graph schema and CLI command reference.
 - [SECURITY.md](SECURITY.md) — Responsible usage, safe probing guidelines, and threat model.
 - [CONTRIBUTING.md](CONTRIBUTING.md) — Setup and contribution instructions.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
